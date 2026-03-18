@@ -1,0 +1,98 @@
+{
+  "source": {
+    "name": "BOE",
+    "baseUrl": "https://www.boe.es"
+  },
+  "documentType": "LEY",
+  "officialId": "Ley 26/2007",
+  "title": "Ley 26/2007, de 23 de octubre, de Responsabilidad Medioambiental",
+  "summary": "Transpone la Directiva 2004/35/CE sobre responsabilidad medioambiental en relación con la prevención y reparación de daños medioambientales. Establece un régimen de responsabilidad objetiva e ilimitada para los operadores de actividades económicas que causen daños al medio ambiente.",
+  "publicationDate": "2007-10-24",
+  "effectiveDate": "2007-10-24",
+  "status": "VIGENTE",
+  "officialUrl": "https://www.boe.es/buscar/act.php?id=BOE-A-2007-18475",
+  "versionTag": "consolidado-2022",
+  "metadata": {
+    "boeId": "BOE-A-2007-18475",
+    "directivaTranspuesta": "Directiva 2004/35/CE"
+  },
+  "sections": [
+    {
+      "sectionType": "ARTICULO",
+      "number": "1",
+      "title": "Objeto",
+      "content": "Esta ley regula la responsabilidad de los operadores de prevenir, evitar y reparar los daños medioambientales, de conformidad con el artículo 45 de la Constitución y con los principios de prevención y de que «quien contamina paga».",
+      "orderIndex": 0
+    },
+    {
+      "sectionType": "ARTICULO",
+      "number": "2",
+      "title": "Definiciones",
+      "content": "A los efectos de esta ley se entenderá por: a) «Daño medioambiental»: 1.º Los daños a las especies silvestres y a los hábitat, es decir, cualquier daño que produzca efectos adversos significativos en la posibilidad de alcanzar o de mantener el estado favorable de conservación de esos hábitat o especies. El carácter significativo de esos efectos se evaluará en relación con el estado básico, teniendo en cuenta los criterios expuestos en el anexo I. Los daños a las especies silvestres y a los hábitat no incluirán los efectos adversos previamente identificados, derivados de un acto del operador expresamente autorizado por las autoridades competentes de conformidad con la normativa aplicable. 2.º Los daños a las aguas, entendidos como cualquier daño que produzca efectos adversos significativos en el estado ecológico, químico o cuantitativo de las masas de agua superficiales o subterráneas, o bien en el potencial ecológico de las masas de agua artificiales y muy modificadas. 3.º Los daños a la ribera del mar y de las rías. 4.º Los daños al suelo, es decir, cualquier contaminación del suelo que suponga un riesgo significativo de que se produzcan efectos adversos para la salud humana o para el medio ambiente debidos al depósito, vertido o introducción directos o indirectos de sustancias, preparados, organismos o microorganismos en el suelo o en el subsuelo. b) «Operador»: cualquier persona física o jurídica, pública o privada, que desempeñe una actividad económica o profesional o que, en virtud de cualquier título, controle dicha actividad o tenga un poder económico determinante sobre su funcionamiento técnico. c) «Actividad económica o profesional»: toda aquella realizada con ocasión de una actividad de índole económica, un negocio o una empresa, con independencia de su carácter público o privado y de que tenga o no fines lucrativos. d) «Emisión»: la liberación en el medio ambiente, derivada de actividades humanas, de sustancias, preparados, organismos o microorganismos. e) «Amenaza inminente de daño»: una probabilidad suficiente de que se produzcan daños medioambientales en un futuro próximo.",
+      "orderIndex": 1
+    },
+    {
+      "sectionType": "ARTICULO",
+      "number": "3",
+      "title": "Ámbito de aplicación",
+      "content": "1. Esta ley se aplicará a los daños medioambientales y a las amenazas inminentes de que tales daños ocurran, cuando hayan sido causados por las actividades económicas o profesionales enumeradas en el anexo III, aunque no exista dolo, culpa o negligencia. Se aplicará asimismo a los daños medioambientales y a las amenazas inminentes de que tales daños ocurran, cuando hayan sido causados por las actividades económicas o profesionales distintas de las enumeradas en el anexo III, siempre que medie dolo, culpa o negligencia. 2. Esta ley se aplicará sin perjuicio de la normativa sobre responsabilidad civil, penal o administrativa y de la legislación sectorial aplicable. 3. Esta ley no se aplicará a los daños medioambientales ni a las amenazas inminentes de tales daños cuando hayan sido ocasionados por: a) Un acto derivado de un conflicto armado, de hostilidades, de guerra civil o de una insurrección. b) Un fenómeno natural de carácter excepcional, inevitable e irresistible.",
+      "orderIndex": 2
+    },
+    {
+      "sectionType": "ARTICULO",
+      "number": "4",
+      "title": "Exclusiones",
+      "content": "1. Quedarán excluidos de esta ley los daños medioambientales y las amenazas inminentes de que tales daños se produzcan cuando hayan sido causados por alguna de las siguientes causas: a) Los daños causados por una contaminación de carácter difuso, salvo cuando sea posible establecer un vínculo causal entre los daños y las actividades de operadores concretos. b) Las actividades cuyo principal propósito sea servir a la defensa nacional o a la seguridad internacional. c) Las actividades cuyo único propósito sea la protección contra los desastres naturales. 2. Esta ley no concederá a los particulares un derecho de indemnización con motivo de un daño medioambiental o de una amenaza inminente de tal daño, sin perjuicio de lo dispuesto en la legislación civil.",
+      "orderIndex": 3
+    },
+    {
+      "sectionType": "ARTICULO",
+      "number": "5",
+      "title": "Competencia administrativa",
+      "content": "Serán competentes para la aplicación de esta ley las comunidades autónomas donde se localicen los daños medioambientales, o la amenaza de que tales daños se produzcan. Cuando los daños medioambientales, o la amenaza de que tales daños se produzcan, afecten al territorio de varias comunidades autónomas, la competencia para la coordinación de las medidas de prevención y de evitación o de reparación de los daños corresponderá a la Administración General del Estado, sin perjuicio de las competencias de cada comunidad autónoma sobre su territorio.",
+      "orderIndex": 4
+    },
+    {
+      "sectionType": "ARTICULO",
+      "number": "6",
+      "title": "Obligaciones del operador en materia de prevención y de evitación de nuevos daños",
+      "content": "1. Cuando se produzca una amenaza inminente de daño medioambiental, el operador de la actividad económica o profesional potencialmente causante adoptará, sin demora y sin necesidad de advertencia, de requerimiento o de acto administrativo previo, las medidas preventivas apropiadas. 2. Cuando se hayan producido daños medioambientales, el operador, sin demora y sin necesidad de advertencia, de requerimiento o de acto administrativo previo: a) Adoptará todas aquellas medidas provisionales necesarias para, de forma inmediata, reparar, restaurar o reemplazar los recursos naturales y servicios de recursos naturales dañados, sin perjuicio de los criterios adicionales que con este propósito establezcan las comunidades autónomas, así como las medidas necesarias para eliminar todo riesgo significativo de que se produzcan efectos adversos para la salud humana. b) Informará a la autoridad competente de todos los aspectos pertinentes de la situación, de forma inmediata y sin demora injustificada.",
+      "orderIndex": 5
+    },
+    {
+      "sectionType": "ARTICULO",
+      "number": "17",
+      "title": "Obligación de reparar",
+      "content": "1. Los operadores de las actividades económicas o profesionales incluidas en esta ley están obligados a adoptar las medidas de prevención, de evitación y de reparación de daños medioambientales y a sufragar su coste, cualquiera que sea su cuantía, cuando resulten responsables de los mismos. 2. La responsabilidad regulada en esta ley es objetiva e ilimitada. 3. Cuando por aplicación de otras leyes se exija el cumplimiento de medidas de prevención y de evitación de daños equivalentes a las reguladas en esta ley, los operadores que las hayan adoptado estarán exentos de la obligación de adoptar las previstas en esta ley.",
+      "orderIndex": 6
+    },
+    {
+      "sectionType": "ARTICULO",
+      "number": "19",
+      "title": "Medidas de reparación",
+      "content": "Las medidas de reparación se adoptarán de acuerdo con los criterios contenidos en el anexo II de esta ley. Se distingue entre reparación primaria, complementaria y compensatoria. La reparación primaria es toda medida reparadora que restituye o aproxima al máximo los recursos naturales dañados y los servicios de recursos naturales a su estado básico. La reparación complementaria es toda medida reparadora adoptada en relación con los recursos naturales o con los servicios de recursos naturales para compensar el hecho de que la reparación primaria no haya dado lugar a la plena restitución de los recursos naturales o servicios de recursos naturales dañados. La reparación compensatoria es toda acción adoptada para compensar las pérdidas provisionales de recursos naturales o servicios de recursos naturales que tengan lugar desde la fecha en la que se produjo el daño hasta la fecha en la que la reparación primaria haya surtido todo su efecto.",
+      "orderIndex": 7
+    },
+    {
+      "sectionType": "ARTICULO",
+      "number": "24",
+      "title": "Garantía financiera obligatoria",
+      "content": "1. Los operadores de las actividades incluidas en el anexo III deberán disponer de una garantía financiera que les permita hacer frente a la responsabilidad medioambiental inherente a la actividad o actividades que pretendan desarrollar. La garantía financiera podrá constituirse a través de: a) Una póliza de seguro suscrita con una entidad aseguradora autorizada para operar en España. b) La obtención de un aval, concedido por alguna entidad financiera autorizada a operar en España. c) La constitución de una reserva técnica mediante la dotación de un fondo ad hoc con materialización en inversiones financieras respaldadas por el sector público. 2. Quedan exentos de la obligación de constituir garantía financiera los operadores de aquellas actividades susceptibles de ocasionar daños cuya reparación se evalúe por una cantidad inferior a 300.000 euros; y los operadores de actividades susceptibles de ocasionar daños cuya reparación se evalúe por una cantidad comprendida entre 300.000 y 2.000.000 de euros que acrediten mediante la presentación de certificados expedidos por organismos independientes que están adheridos con carácter permanente y continuado, bien al sistema comunitario de gestión y auditoría medioambientales (EMAS), bien al sistema de gestión medioambiental UNE-EN ISO 14001.",
+      "orderIndex": 8
+    },
+    {
+      "sectionType": "DISPOSICION_ADICIONAL",
+      "number": "1",
+      "title": "Fondo de compensación de daños medioambientales",
+      "content": "Con cargo a los Presupuestos Generales del Estado se dotará un Fondo de compensación de daños medioambientales, gestionado por el Consorcio de Compensación de Seguros, con la finalidad de atender a la reparación de los daños medioambientales cuando el operador responsable de los mismos no tenga capacidad suficiente para hacerles frente de manera completa o el procedimiento de reclamación sea particularmente complejo.",
+      "orderIndex": 9
+    },
+    {
+      "sectionType": "DISPOSICION_FINAL",
+      "number": "1",
+      "title": "Desarrollo reglamentario",
+      "content": "Se autoriza al Gobierno para dictar cuantas disposiciones reglamentarias sean necesarias para el desarrollo y aplicación de esta ley. En particular, el Gobierno aprobará mediante Real Decreto el Reglamento de desarrollo parcial de esta ley, que incluirá, al menos, el desarrollo de la garantía financiera obligatoria regulada en el artículo 24, los métodos de evaluación de daños medioambientales y los criterios para la determinación de las medidas de prevención, de evitación y de reparación.",
+      "orderIndex": 10
+    }
+  ]
+}

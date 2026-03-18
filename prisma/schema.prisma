@@ -1,0 +1,190 @@
+generator client {
+  provider        = "prisma-client-js"
+  previewFeatures = ["postgresqlExtensions"]
+}
+
+datasource db {
+  provider   = "postgresql"
+  url        = env("DATABASE_URL")
+  extensions = [vector]
+}
+
+// ─── Enums ──────────────────────────────────────────────────────────────────────
+
+enum DocumentType {
+  LEY
+  LEY_ORGANICA
+  REAL_DECRETO
+  REAL_DECRETO_LEY
+  REAL_DECRETO_LEGISLATIVO
+  ORDEN_MINISTERIAL
+  DIRECTIVA_UE
+  REGLAMENTO_UE
+  DECISION_UE
+  OTRO
+}
+
+enum DocumentStatus {
+  VIGENTE
+  DEROGADA
+  MODIFICADA
+  PARCIALMENTE_DEROGADA
+}
+
+enum SectionType {
+  PREAMBULO
+  TITULO
+  CAPITULO
+  SECCION
+  ARTICULO
+  APARTADO
+  DISPOSICION_ADICIONAL
+  DISPOSICION_TRANSITORIA
+  DISPOSICION_DEROGATORIA
+  DISPOSICION_FINAL
+  ANEXO
+}
+
+enum ChunkType {
+  ARTICULO_COMPLETO
+  APARTADO
+  DISPOSICION
+  DEFINICION
+  ANEXO_FRAGMENTO
+  PREAMBULO_FRAGMENTO
+}
+
+enum IngestionStatus {
+  PENDING
+  PROCESSING
+  EMBEDDING
+  COMPLETED
+  FAILED
+}
+
+// ─── Models ─────────────────────────────────────────────────────────────────────
+
+/// Fuente oficial de publicación (BOE, DOUE, diarios autonómicos...)
+model LegalSource {
+  id          String   @id @default(uuid()) @db.Uuid
+  name        String   @unique
+  description String?
+  baseUrl     String?
+
+  documents LegalDocument[]
+
+  createdAt DateTime @default(now())
+
+  @@map("legal_sources")
+}
+
+/// Documento normativo (una ley, un real decreto, etc.)
+model LegalDocument {
+  id              String         @id @default(uuid()) @db.Uuid
+  sourceId        String         @db.Uuid
+  documentType    DocumentType
+  officialId      String         @unique
+  title           String
+  summary         String?
+  publicationDate DateTime       @db.Date
+  effectiveDate   DateTime?      @db.Date
+  status          DocumentStatus @default(VIGENTE)
+  officialUrl     String?
+  metadata        Json?
+
+  source   LegalSource    @relation(fields: [sourceId], references: [id])
+  versions LegalVersion[]
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@index([documentType])
+  @@index([status])
+  @@map("legal_documents")
+}
+
+/// Versión concreta de un documento (consolidaciones, modificaciones)
+model LegalVersion {
+  id           String  @id @default(uuid()) @db.Uuid
+  documentId   String  @db.Uuid
+  versionTag   String
+  versionNotes String?
+  rawContent   String?
+
+  document LegalDocument @relation(fields: [documentId], references: [id], onDelete: Cascade)
+  sections LegalSection[]
+  chunks   LegalChunk[]
+
+  publishedAt DateTime  @db.Date
+  createdAt   DateTime  @default(now())
+
+  @@unique([documentId, versionTag])
+  @@map("legal_versions")
+}
+
+/// Sección estructural del documento (título, capítulo, artículo, apartado...)
+model LegalSection {
+  id          String      @id @default(uuid()) @db.Uuid
+  versionId   String      @db.Uuid
+  parentId    String?     @db.Uuid
+  sectionType SectionType
+  number      String?
+  title       String?
+  content     String
+  orderIndex  Int
+
+  version  LegalVersion  @relation(fields: [versionId], references: [id], onDelete: Cascade)
+  parent   LegalSection? @relation("SectionHierarchy", fields: [parentId], references: [id])
+  children LegalSection[] @relation("SectionHierarchy")
+  chunks   LegalChunk[]
+
+  createdAt DateTime @default(now())
+
+  @@index([versionId])
+  @@index([sectionType])
+  @@map("legal_sections")
+}
+
+/// Chunk preparado para RAG, con embedding vectorial
+model LegalChunk {
+  id         String    @id @default(uuid()) @db.Uuid
+  sectionId  String    @db.Uuid
+  versionId  String    @db.Uuid
+  chunkType  ChunkType
+  content    String
+  tokenCount Int
+  orderIndex Int
+  metadata   Json?
+
+  // pgvector — Prisma no soporta el tipo vector nativamente,
+  // por lo que usamos Unsupported y operamos con $queryRaw
+  embedding Unsupported("vector(1536)")?
+
+  section LegalSection @relation(fields: [sectionId], references: [id], onDelete: Cascade)
+  version LegalVersion @relation(fields: [versionId], references: [id], onDelete: Cascade)
+
+  createdAt DateTime @default(now())
+
+  @@index([versionId])
+  @@index([chunkType])
+  @@map("legal_chunks")
+}
+
+/// Registro de cada proceso de ingestión
+model IngestionJob {
+  id              String          @id @default(uuid()) @db.Uuid
+  documentId      String?         @db.Uuid
+  status          IngestionStatus @default(PENDING)
+  sourceFile      String
+  totalSections   Int             @default(0)
+  totalChunks     Int             @default(0)
+  processedChunks Int             @default(0)
+  errorMessage    String?
+
+  startedAt   DateTime?
+  completedAt DateTime?
+  createdAt   DateTime  @default(now())
+
+  @@index([status])
+  @@map("ingestion_jobs")
+}
